@@ -5,7 +5,14 @@ public class blueTicket {
 	 * result is 10. Otherwise if the ab sum is exactly 10 more than either bc or ac sums, the result is 5. Otherwise 
 	 * the result is 0.*/
 	public int blueTicket(int a, int b, int c) {
-		  
+		if(a + b == 10 || b + c == 10 || a + c == 10)
+			return 10;
+		
+		int abSum = a + b;
+		if((abSum - (b+c) >= 10) || (abSum - (a+c) >= 10)) 
+			return 5;
+		
+		return 0;
 	}
 
 }
