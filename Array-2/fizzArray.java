@@ -5,7 +5,17 @@ public class fizzArray {
 	 * the length-0 case; the for-loop should naturally execute 0 times in that case, so it just works. The syntax to 
 	 * make a new int array is: new int[desired_length]   (See also: FizzBuzz Code)*/
 	public int[] fizzArray(int n) {
-		  
+		int[] result;
+		if(n == 0) {
+			result = new int[0];
+		} else {
+			result = new int[n];
+			for(int i = 0; i < n; i++) {
+				result[i] = i;
+			}
+		}
+		
+		return result;
 	}
 
 }
