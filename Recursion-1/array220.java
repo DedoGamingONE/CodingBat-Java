@@ -5,7 +5,13 @@ public class array220 {
 	 * array that begins at the given index. In this way, a recursive call can pass index+1 to move down 
 	 * the array. The initial call will pass in index as 0.*/
 	public boolean array220(int[] nums, int index) {
-		  
+	  if(index >= nums.length-1 || nums.length <= 1)
+	    return false;
+	    
+	  if(nums[index+1] == (nums[index]*10))
+	    return true;
+	  
+	  return array220(nums, index+1);
 	}
 
 }
