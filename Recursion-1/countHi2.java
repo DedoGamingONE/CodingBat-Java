@@ -2,6 +2,8 @@
 public class countHi2 {
 	/*Given a string, compute recursively the number of times lowercase "hi" appears 
 	 * in the string, however do not count "hi" that have an 'x' immedately before them.*/
+	
+	//INCOMPLETE
 	public int countHi2(String str) {
 		if(str.length() < 2) {
 			return 0;
