@@ -1,18 +1,21 @@
 import java.util.Map;
 
-public class firstChar {
-  public Map<String, String> firstChar(String[] strings) {
-    Map<String, String> map = new HashMap();
+public class allSwap {
+  public String[] allSwap(String[] strings) {
+    Map<String, Integer> map = new HashMap();
 
     for (int i = 0; i < strings.length; i++) {
-      if (map.containsKey(strings[i].substring(0, 1))) {
-        map.put(strings[i].substring(0, 1),
-          map.get(strings[i].substring(0, 1)) + strings[i]);
+      if (map.containsKey(String.valueOf(strings[i].charAt(0)))) {
+        int indexOfFirstInstance = map.get(String.valueOf(strings[i].charAt(0)));
+        String currentValue = strings[i];
+        strings[i] = strings[indexOfFirstInstance];
+        strings[indexOfFirstInstance] = currentValue;
+        map.remove(String.valueOf(strings[i].charAt(0)));
       } else {
-        map.put(strings[i].substring(0, 1), strings[i]);
+        map.put(String.valueOf(strings[i].charAt(0)), i);
       }
     }
-
-    return map;
+    return strings;
   }
+
 }
